@@ -13,6 +13,8 @@ import {
 
 const SITE = "https://707sky.com";
 
+const WORK_IMAGE = "/IMG_2251.jpeg";
+
 type Props = {
   params: Promise<{
     province: string;
@@ -45,9 +47,8 @@ export async function generateMetadata({
     `${region.name} 스카이차 | 1톤·2.5톤·3.5톤·4.5톤·5톤 | 707스카이`;
 
   const description =
-    `${region.name} 스카이차 전문 707스카이. ` +
-    `${region.description} ` +
-    `1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차 작업 안내.`;
+    `${region.name} 스카이차 전문 707스카이. ${region.description} ` +
+    `1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차 작업 및 실제 작업 현장 안내.`;
 
   const canonical =
     `${SITE}/area/${region.province}/${region.slug}`;
@@ -75,10 +76,8 @@ export async function generateMetadata({
 
       images: [
         {
-          url:
-            `${SITE}/IMG_2251.jpeg`,
-          alt:
-            `${region.name} 스카이차 작업`,
+          url: `${SITE}${WORK_IMAGE}`,
+          alt: `${region.name} 스카이차 작업 현장`,
         },
       ],
     },
@@ -142,13 +141,11 @@ export default async function RegionPage({
   ];
 
   const jsonLd = {
-    "@context":
-      "https://schema.org",
+    "@context": "https://schema.org",
 
     "@graph": [
       {
-        "@type":
-          "Service",
+        "@type": "Service",
 
         name:
           `${region.name} 스카이차`,
@@ -180,6 +177,9 @@ export default async function RegionPage({
 
         url:
           canonical,
+
+        image:
+          `${SITE}${WORK_IMAGE}`,
       },
 
       {
@@ -258,6 +258,84 @@ export default async function RegionPage({
   return (
     <main className="regionPage">
       <style>{`
+        .region-single-work {
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 110px 40px;
+        }
+
+        .region-single-work-label {
+          color: #74804f;
+          font-size: 9px;
+          font-weight: 900;
+          letter-spacing: 3px;
+        }
+
+        .region-single-work-title {
+          margin-top: 20px;
+          font-size: clamp(45px, 6vw, 72px);
+          line-height: 1.05;
+          letter-spacing: -5px;
+          word-break: keep-all;
+        }
+
+        .region-single-work-desc {
+          max-width: 620px;
+          margin-top: 22px;
+          color: #73776d;
+          font-size: 14px;
+          line-height: 1.9;
+          word-break: keep-all;
+        }
+
+        .region-single-work-photo {
+          position: relative;
+          margin-top: 45px;
+          min-height: 520px;
+          overflow: hidden;
+          background: #11140f;
+        }
+
+        .region-single-work-photo img {
+          width: 100%;
+          height: 520px;
+          object-fit: cover;
+        }
+
+        .region-single-work-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(
+              180deg,
+              transparent 55%,
+              rgba(7,9,6,.72) 100%
+            );
+        }
+
+        .region-single-work-caption {
+          position: absolute;
+          left: 24px;
+          right: 24px;
+          bottom: 22px;
+          color: white;
+        }
+
+        .region-single-work-caption span {
+          display: block;
+          color: #b2c080;
+          font-size: 8px;
+          font-weight: 900;
+          letter-spacing: 2px;
+        }
+
+        .region-single-work-caption strong {
+          display: block;
+          margin-top: 7px;
+          font-size: 20px;
+          letter-spacing: -1px;
+        }
+
         .local-vehicle-grid {
           display: grid;
           grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -267,11 +345,14 @@ export default async function RegionPage({
         .local-vehicle-button {
           min-height: 90px;
           padding: 18px;
+
           background: #f7f6f0;
           border: 1px solid #cecec3;
+
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+
           transition: .2s ease;
         }
 
@@ -303,12 +384,15 @@ export default async function RegionPage({
           min-width: 0;
           min-height: 50px;
           padding: 0 13px;
+
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 8px;
+
           background: #f7f6f0;
           border: 1px solid #cecec3;
+
           font-size: 12px;
           font-weight: 800;
         }
@@ -325,15 +409,10 @@ export default async function RegionPage({
           font-weight: 400;
         }
 
-        .local-area-button:hover {
-          background: #141811;
-          border-color: #141811;
-          color: white;
-        }
-
         .region-info-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
+
           border-top: 1px solid #c5c6bc;
           border-left: 1px solid #c5c6bc;
         }
@@ -341,9 +420,11 @@ export default async function RegionPage({
         .region-info-grid article {
           min-height: 200px;
           padding: 22px;
+
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+
           border-right: 1px solid #c5c6bc;
           border-bottom: 1px solid #c5c6bc;
         }
@@ -367,6 +448,23 @@ export default async function RegionPage({
         }
 
         @media (max-width: 800px) {
+          .region-single-work {
+            padding: 75px 20px;
+          }
+
+          .region-single-work-title {
+            font-size: 40px;
+            letter-spacing: -3px;
+          }
+
+          .region-single-work-photo {
+            min-height: 380px;
+          }
+
+          .region-single-work-photo img {
+            height: 380px;
+          }
+
           .local-vehicle-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
@@ -381,6 +479,23 @@ export default async function RegionPage({
         }
 
         @media (max-width: 430px) {
+          .region-single-work-photo {
+            min-height: 320px;
+          }
+
+          .region-single-work-photo img {
+            height: 320px;
+          }
+
+          .region-single-work-caption {
+            left: 16px;
+            bottom: 16px;
+          }
+
+          .region-single-work-caption strong {
+            font-size: 17px;
+          }
+
           .local-vehicle-button {
             min-height: 80px;
             padding: 15px;
@@ -406,8 +521,7 @@ export default async function RegionPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html:
-            JSON.stringify(jsonLd),
+          __html: JSON.stringify(jsonLd),
         }}
       />
 
@@ -423,7 +537,7 @@ export default async function RegionPage({
               rgba(7,9,6,.60),
               rgba(7,9,6,.38)
             ),
-            url("/IMG_2251.jpeg")
+            url("${WORK_IMAGE}")
           `,
         }}
       >
@@ -432,13 +546,8 @@ export default async function RegionPage({
             href="/"
             className="regionLogo"
           >
-            <strong>
-              707
-            </strong>
-
-            <span>
-              SKY
-            </span>
+            <strong>707</strong>
+            <span>SKY</span>
           </Link>
 
           <div className="regionBreadcrumb">
@@ -468,7 +577,6 @@ export default async function RegionPage({
           <h1>
             {region.name}
             <br />
-
             <strong>
               스카이차
             </strong>
@@ -512,11 +620,50 @@ export default async function RegionPage({
 
             <p>
               현장 위치와 작업 높이,
-              차량 진입 공간과 작업 내용을
-              확인하여 1톤부터 5톤까지
-              현장 조건에 적합한 차량을
-              선택할 수 있도록 안내합니다.
+              차량 진입 공간과 작업 내용을 확인하여
+              1톤부터 5톤까지 현장 조건에
+              적합한 차량을 안내합니다.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 실제 작업사진 1장 */}
+
+      <section className="region-single-work">
+        <span className="region-single-work-label">
+          WORK PHOTO
+        </span>
+
+        <h2 className="region-single-work-title">
+          {region.name}
+          <br />
+          실제 작업 현장
+        </h2>
+
+        <p className="region-single-work-desc">
+          707스카이의 스카이차 작업 현장 사진입니다.
+          실제 현장에서는 작업 높이와 진입 여건,
+          주변 환경을 확인하여 작업에 적합한 차량을
+          안내합니다.
+        </p>
+
+        <div className="region-single-work-photo">
+          <img
+            src={WORK_IMAGE}
+            alt={`${region.name} 스카이차 실제 작업 현장`}
+          />
+
+          <div className="region-single-work-overlay" />
+
+          <div className="region-single-work-caption">
+            <span>
+              707 SKY · WORK SITE
+            </span>
+
+            <strong>
+              {region.name} 스카이차 작업
+            </strong>
           </div>
         </div>
       </section>
@@ -599,84 +746,6 @@ export default async function RegionPage({
         </div>
       </section>
 
-      {/* 현장 조건 */}
-
-      <section className="regionServices">
-        <div className="regionSectionHead">
-          <span>
-            CHECK POINT
-          </span>
-
-          <h2>
-            현장 배차 전
-            <br />
-            확인 사항
-          </h2>
-        </div>
-
-        <div className="region-info-grid">
-          <article>
-            <span>01</span>
-
-            <div>
-              <h3>
-                작업 높이
-              </h3>
-
-              <p>
-                실제 작업 위치와
-                필요한 작업 높이를 확인합니다.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <span>02</span>
-
-            <div>
-              <h3>
-                진입 공간
-              </h3>
-
-              <p>
-                골목, 도로 폭,
-                차량 진입 여건을 확인합니다.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <span>03</span>
-
-            <div>
-              <h3>
-                주변 환경
-              </h3>
-
-              <p>
-                전선, 건물,
-                구조물과 작업 반경을 확인합니다.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <span>04</span>
-
-            <div>
-              <h3>
-                작업 내용
-              </h3>
-
-              <p>
-                간판, 외벽,
-                철골 등 작업 종류를 확인합니다.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
       {/* 차량 선택 */}
 
       <section className="regionVehicleSection">
@@ -725,9 +794,8 @@ export default async function RegionPage({
         </h2>
 
         <p>
-          {region.name}에서 스카이차가 필요한
-          경우 현장 주소, 작업 위치,
-          작업 높이와 차량 진입 조건을
+          {region.name}에서 스카이차가 필요한 경우
+          현장 주소, 작업 위치, 작업 높이와 차량 진입 조건을
           확인하여 적합한 차량을 안내합니다.
         </p>
 
@@ -738,16 +806,9 @@ export default async function RegionPage({
           각종 시설물 유지보수 등
           다양한 고소작업에 활용할 수 있습니다.
         </p>
-
-        <p>
-          작업 환경에 따라 필요한
-          장비와 차량 크기가 달라질 수 있으므로
-          실제 현장 조건을 확인한 뒤
-          차량을 선택하는 것이 중요합니다.
-        </p>
       </section>
 
-      {/* 같은 지역권 */}
+      {/* 다른 지역 */}
 
       <section className="regionNearby">
         <div className="regionSectionHead">
@@ -808,8 +869,7 @@ export default async function RegionPage({
             <article
               key={item.q}
               style={{
-                padding:
-                  "28px 0",
+                padding: "28px 0",
 
                 borderBottom:
                   "1px solid #c5c6bc",
@@ -817,14 +877,9 @@ export default async function RegionPage({
             >
               <h3
                 style={{
-                  fontSize:
-                    "18px",
-
-                  letterSpacing:
-                    "-1px",
-
-                  wordBreak:
-                    "keep-all",
+                  fontSize: "18px",
+                  letterSpacing: "-1px",
+                  wordBreak: "keep-all",
                 }}
               >
                 {item.q}
@@ -832,23 +887,12 @@ export default async function RegionPage({
 
               <p
                 style={{
-                  maxWidth:
-                    "850px",
-
-                  marginTop:
-                    "12px",
-
-                  color:
-                    "#73776d",
-
-                  fontSize:
-                    "13px",
-
-                  lineHeight:
-                    "1.85",
-
-                  wordBreak:
-                    "keep-all",
+                  maxWidth: "850px",
+                  marginTop: "12px",
+                  color: "#73776d",
+                  fontSize: "13px",
+                  lineHeight: "1.85",
+                  wordBreak: "keep-all",
                 }}
               >
                 {item.a}
@@ -860,13 +904,8 @@ export default async function RegionPage({
 
       <footer className="regionFooter">
         <Link href="/">
-          <strong>
-            707
-          </strong>
-
-          <span>
-            SKY
-          </span>
+          <strong>707</strong>
+          <span>SKY</span>
         </Link>
 
         <p>
