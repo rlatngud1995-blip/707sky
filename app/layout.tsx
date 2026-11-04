@@ -71,10 +71,13 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+
       "max-image-preview":
         "large",
+
       "max-snippet":
         -1,
+
       "max-video-preview":
         -1,
     },
@@ -83,11 +86,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url:
-          FAVICON,
-
-        type:
-          "image/png",
+        url: FAVICON,
+        type: "image/png",
       },
     ],
 
@@ -96,11 +96,8 @@ export const metadata: Metadata = {
 
     apple: [
       {
-        url:
-          FAVICON,
-
-        type:
-          "image/png",
+        url: FAVICON,
+        type: "image/png",
       },
     ],
   },
@@ -155,6 +152,11 @@ export const metadata: Metadata = {
       "/IMG_2251.jpeg",
     ],
   },
+
+  other: {
+    "format-detection":
+      "telephone=yes",
+  },
 };
 
 export default function RootLayout({
@@ -176,6 +178,9 @@ export default function RootLayout({
       SITE,
 
     logo:
+      `${SITE}${FAVICON}`,
+
+    image:
       `${SITE}${FAVICON}`,
 
     telephone:
@@ -211,9 +216,48 @@ export default function RootLayout({
     ],
   };
 
+  const websiteJsonLd = {
+    "@context":
+      "https://schema.org",
+
+    "@type":
+      "WebSite",
+
+    name:
+      "707스카이",
+
+    url:
+      SITE,
+
+    inLanguage:
+      "ko-KR",
+
+    publisher: {
+      "@type":
+        "Organization",
+
+      name:
+        "707스카이",
+
+      logo: {
+        "@type":
+          "ImageObject",
+
+        url:
+          `${SITE}${FAVICON}`,
+      },
+    },
+  };
+
   return (
     <html lang="ko">
       <head>
+        {/* 네이버 서치어드바이저 소유확인 */}
+        <meta
+          name="naver-site-verification"
+          content="48713f453b8fe896e4b882e755a6a3a6868d3fba"
+        />
+
         <meta
           name="theme-color"
           content="#0d100b"
@@ -224,6 +268,7 @@ export default function RootLayout({
           content="telephone=yes"
         />
 
+        {/* FAVICON */}
         <link
           rel="icon"
           href={FAVICON}
@@ -241,12 +286,24 @@ export default function RootLayout({
           href={FAVICON}
         />
 
+        {/* ORGANIZATION */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html:
               JSON.stringify(
                 organizationJsonLd
+              ),
+          }}
+        />
+
+        {/* WEBSITE */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html:
+              JSON.stringify(
+                websiteJsonLd
               ),
           }}
         />
