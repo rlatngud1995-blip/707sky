@@ -9,9 +9,9 @@ html {
 }
 
 body {
+  background: #e9e8df;
+  color: #11130f;
   font-family: Arial, "Noto Sans KR", sans-serif;
-  background: #0f120d;
-  color: #ffffff;
 }
 
 a {
@@ -19,109 +19,631 @@ a {
   text-decoration: none;
 }
 
-button {
-  font: inherit;
-}
-
 main {
-  min-height: 100vh;
+  overflow: hidden;
 }
 
-section {
+/* HERO */
+
+.hero {
+  position: relative;
   min-height: 100vh;
-  padding: 80px 24px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
   background:
     linear-gradient(
-      180deg,
-      rgba(15, 18, 13, 0.96),
-      rgba(20, 25, 17, 0.98)
+      135deg,
+      rgba(8, 11, 7, 0.98),
+      rgba(19, 24, 15, 0.98)
     );
+  color: #ffffff;
 }
 
-section > p:first-child {
-  color: #9cab70;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 65px 65px;
 }
 
-h1 {
-  font-size: clamp(72px, 18vw, 180px);
+.hero::after {
+  content: "707";
+  position: absolute;
+  right: -70px;
+  bottom: -110px;
+
+  font-size: min(38vw, 580px);
+  line-height: 1;
   font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -8px;
-  color: #8f9f64;
+  letter-spacing: -45px;
+
+  color: rgba(255, 255, 255, 0.025);
 }
 
-h2 {
-  margin-top: 32px;
+/* HEADER */
 
-  font-size: clamp(38px, 8vw, 70px);
-  line-height: 1.1;
+.header {
+  position: relative;
+  z-index: 10;
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding: 28px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.logo strong {
+  font-size: 34px;
   letter-spacing: -3px;
 }
 
-h2 + p {
-  margin-top: 22px;
-
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 16px;
+.logo span {
+  color: #a8b47a;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 5px;
 }
 
-section > div {
+.header nav {
   display: flex;
-  gap: 10px;
-  margin-top: 34px;
-}
+  gap: 30px;
 
-button {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  background: transparent;
-  color: white;
-
-  padding: 16px 24px;
-
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 
-  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-button:first-child {
-  background: #8f9f64;
-  color: #10130d;
-  border-color: #8f9f64;
+.header nav a:hover {
+  color: #b9c78b;
 }
 
-button:hover {
-  opacity: 0.85;
+/* HERO CONTENT */
+
+.heroInner {
+  position: relative;
+  z-index: 5;
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding: 130px 40px 200px;
 }
 
-@media (max-width: 768px) {
-  section {
-    padding: 60px 20px;
+.heroTag {
+  display: inline-block;
+
+  border: 1px solid rgba(169, 184, 118, 0.4);
+
+  padding: 8px 13px;
+
+  color: #a9b876;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+
+  margin-bottom: 35px;
+}
+
+.heroInner h1 {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+
+  font-size: clamp(95px, 15vw, 220px);
+  line-height: 0.8;
+  letter-spacing: -15px;
+  font-weight: 900;
+}
+
+.heroInner h1 span {
+  font-size: clamp(20px, 3vw, 42px);
+  letter-spacing: 12px;
+  color: #99a76a;
+
+  margin-bottom: 20px;
+}
+
+.heroInner h2 {
+  margin-top: 45px;
+
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 1.08;
+  letter-spacing: -5px;
+}
+
+.heroInner > p {
+  margin-top: 30px;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.heroButtons {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 38px;
+}
+
+.primaryBtn,
+.outlineBtn {
+  min-width: 160px;
+
+  padding: 17px 25px;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.primaryBtn {
+  background: #98a768;
+  color: #0f120c;
+}
+
+.outlineBtn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* HERO BOTTOM */
+
+.heroInfo {
+  position: absolute;
+  z-index: 5;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heroInfo > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 23px 40px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.heroInfo span {
+  color: #9baa6a;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.heroInfo strong {
+  font-size: 13px;
+}
+
+/* COMMON */
+
+.intro,
+.vehicleSection,
+.areaSection {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 125px 40px;
+}
+
+.sectionTag {
+  margin-bottom: 22px;
+
+  color: #737f4f;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.sectionTag.light {
+  color: #a7b773;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 55px;
+}
+
+.sectionHead h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  letter-spacing: -4px;
+}
+
+.sectionHead > p {
+  text-align: right;
+
+  color: #777b70;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* INTRO */
+
+.intro h2 {
+  font-size: clamp(45px, 6vw, 78px);
+  line-height: 1.1;
+  letter-spacing: -5px;
+}
+
+.intro p {
+  max-width: 570px;
+
+  margin-top: 30px;
+
+  color: #74786d;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* VEHICLES */
+
+.vehicleGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  border-top: 1px solid #c7c8bd;
+  border-left: 1px solid #c7c8bd;
+}
+
+.vehicleCard {
+  min-height: 390px;
+
+  position: relative;
+
+  padding: 25px;
+
+  border-right: 1px solid #c7c8bd;
+  border-bottom: 1px solid #c7c8bd;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: 0.25s ease;
+}
+
+.vehicleCard:hover {
+  background: #151911;
+  color: #ffffff;
+}
+
+.vehicleNumber {
+  color: #7d8175;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.vehicleCard strong {
+  display: block;
+
+  font-size: 39px;
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+.vehicleCard span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #7c8854;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.vehicleCard p {
+  margin-top: 27px;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: #777b70;
+}
+
+.vehicleCard:hover p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.vehicleArrow {
+  position: absolute;
+  right: 22px;
+  top: 20px;
+
+  font-size: 18px;
+
+  color: #7c8854;
+}
+
+/* WORK */
+
+.workSection {
+  background: #11140f;
+  color: #ffffff;
+
+  padding: 125px 40px;
+}
+
+.workInner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.workInner h2 {
+  margin-bottom: 55px;
+
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1.1;
+  letter-spacing: -4px;
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workGrid > div {
+  min-height: 160px;
+
+  padding: 26px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workGrid span {
+  color: #9aaa69;
+  font-size: 10px;
+}
+
+.workGrid strong {
+  font-size: 20px;
+}
+
+/* AREA */
+
+.areaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #c7c8bd;
+  border-left: 1px solid #c7c8bd;
+}
+
+.areaGrid > div {
+  min-height: 300px;
+
+  padding: 25px;
+
+  border-right: 1px solid #c7c8bd;
+  border-bottom: 1px solid #c7c8bd;
+}
+
+.areaGrid span {
+  color: #778150;
+  font-size: 10px;
+}
+
+.areaGrid h3 {
+  margin-top: 95px;
+
+  font-size: 45px;
+  letter-spacing: -3px;
+}
+
+.areaGrid p {
+  margin-top: 15px;
+
+  color: #777b70;
+
+  font-size: 13px;
+}
+
+/* CTA */
+
+.cta {
+  position: relative;
+
+  background: #858f5b;
+  color: #10120d;
+
+  padding: 130px 40px;
+
+  overflow: hidden;
+}
+
+.cta > span {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.cta h2 {
+  margin-top: 25px;
+
+  font-size: clamp(45px, 6vw, 80px);
+  line-height: 1.07;
+  letter-spacing: -5px;
+}
+
+.cta p {
+  margin-top: 30px;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0d100b;
+  color: #ffffff;
+
+  padding: 55px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.footerLogo strong {
+  font-size: 40px;
+  letter-spacing: -3px;
+}
+
+.footerLogo span {
+  color: #98a768;
+
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+footer > p {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 11px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .header {
+    padding: 22px 20px;
   }
 
-  h1 {
-    letter-spacing: -5px;
+  .header nav {
+    display: none;
   }
 
-  h2 {
-    letter-spacing: -2px;
+  .heroInner {
+    padding: 120px 20px 180px;
   }
 
-  section > div {
-    flex-direction: column;
+  .heroInner h1 {
+    letter-spacing: -9px;
   }
 
-  button {
-    width: 100%;
+  .heroInner h1 span {
+    letter-spacing: 6px;
+  }
+
+  .heroInfo > div {
+    padding: 18px 15px;
+  }
+
+  .heroInfo strong {
+    font-size: 11px;
+  }
+
+  .intro,
+  .vehicleSection,
+  .areaSection {
+    padding: 90px 20px;
+  }
+
+  .sectionHead {
+    display: block;
+  }
+
+  .sectionHead > p {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .vehicleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicleCard {
+    min-height: 260px;
+  }
+
+  .workSection {
+    padding: 90px 20px;
+  }
+
+  .workGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .areaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .areaGrid > div {
+    min-height: 220px;
+  }
+
+  .areaGrid h3 {
+    margin-top: 65px;
+  }
+
+  .cta {
+    padding: 100px 20px;
+  }
+
+  footer {
+    padding: 45px 20px;
+
+    display: block;
+  }
+
+  footer > p {
+    margin-top: 20px;
   }
 }
