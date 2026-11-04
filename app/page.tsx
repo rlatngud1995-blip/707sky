@@ -80,19 +80,22 @@ const areas = [
     number: "01",
     name: "서울",
     english: "SEOUL",
-    desc: "서울 25개 구 전 지역",
+    desc: "서울 25개 구 스카이차",
+    href: "/area/seoul",
   },
   {
     number: "02",
     name: "경기",
     english: "GYEONGGI",
-    desc: "경기도 시·군 전 지역",
+    desc: "경기도 시·군 스카이차",
+    href: "/area/gyeonggi",
   },
   {
     number: "03",
     name: "인천",
     english: "INCHEON",
-    desc: "인천 구·군 전 지역",
+    desc: "인천 구·군 스카이차",
+    href: "/area/incheon",
   },
 ];
 
@@ -304,18 +307,26 @@ export default function Home() {
 
         <div className="areaGrid">
           {areas.map((area) => (
-            <div className="areaCard" key={area.name}>
+            <Link
+              href={area.href}
+              className="areaCard"
+              key={area.name}
+            >
               <div className="areaTop">
                 <span>{area.number}</span>
                 <span>↗</span>
               </div>
 
               <div>
-                <span className="areaEnglish">{area.english}</span>
+                <span className="areaEnglish">
+                  {area.english}
+                </span>
+
                 <h3>{area.name}</h3>
+
                 <p>{area.desc}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -343,7 +354,9 @@ export default function Home() {
 
       {/* CTA */}
       <section className="cta">
-        <span className="smallTitle dark">CONTACT</span>
+        <span className="smallTitle dark">
+          CONTACT
+        </span>
 
         <h2>
           스카이차가 필요한 현장,
