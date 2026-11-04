@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "서울·경기·인천 스카이차 전문 707스카이. 1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차. 간판, 외벽, 전기·조명, 철골, 공장, 창고 및 각종 시설물 고소작업 상담.",
+    "서울·경기·인천 스카이차 전문 707스카이. 1톤부터 5톤까지 간판·외벽·철골·시설물 고소작업 상담.",
 
   keywords: [
     "707스카이",
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
       "707스카이 | 서울·경기·인천 스카이차",
 
     description:
-      "서울·경기·인천 스카이차 전문. 1톤부터 5톤까지 간판, 외벽, 전기·조명, 철골 및 각종 고소작업 현장 상담.",
+      "서울·경기·인천 스카이차 전문 707스카이. 1톤부터 5톤까지 고소작업 상담.",
 
     images: [
       {
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
       "707스카이 | 서울·경기·인천 스카이차",
 
     description:
-      "서울·경기·인천 스카이차 전문 707스카이.",
+      "서울·경기·인천 스카이차 전문 707스카이. 1톤부터 5톤까지 고소작업 상담.",
 
     images: [
       "/IMG_2251.jpeg",
@@ -187,7 +187,7 @@ export default function RootLayout({
       PHONE,
 
     description:
-      "서울·경기·인천 지역을 중심으로 1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차 고소작업 상담을 진행하는 707스카이.",
+      "서울·경기·인천 스카이차 전문 707스카이. 1톤부터 5톤까지 고소작업 상담.",
 
     areaServed: [
       {
@@ -252,7 +252,6 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        {/* 네이버 서치어드바이저 소유확인 */}
         <meta
           name="naver-site-verification"
           content="48713f453b8fe896e4b882e755a6a3a6868d3fba"
@@ -268,7 +267,6 @@ export default function RootLayout({
           content="telephone=yes"
         />
 
-        {/* FAVICON */}
         <link
           rel="icon"
           href={FAVICON}
@@ -286,7 +284,6 @@ export default function RootLayout({
           href={FAVICON}
         />
 
-        {/* ORGANIZATION */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -297,7 +294,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* WEBSITE */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
