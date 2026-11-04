@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import CallBar from "./components/CallBar";
+
 const SITE = "https://707sky.com";
 
 const FAVICON =
   "/46E73DAA-C762-45EE-A1F4-6FD884C8C199.png";
+
+const PHONE =
+  "010-9413-4686";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -12,12 +17,13 @@ export const metadata: Metadata = {
   title: {
     default:
       "707스카이 | 서울·경기·인천 스카이차",
+
     template:
       "%s | 707스카이",
   },
 
   description:
-    "서울·경기·인천 스카이차 전문 707스카이. 1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차. 간판, 외벽, 전기·조명, 철골, 공장, 창고 및 각종 시설물 고소작업 안내.",
+    "서울·경기·인천 스카이차 전문 707스카이. 1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차. 간판, 외벽, 전기·조명, 철골, 공장, 창고 및 각종 시설물 고소작업 상담.",
 
   keywords: [
     "707스카이",
@@ -54,7 +60,8 @@ export const metadata: Metadata = {
     "스카이차 고소작업",
 
   alternates: {
-    canonical: SITE,
+    canonical:
+      SITE,
   },
 
   robots: {
@@ -76,18 +83,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: FAVICON,
-        type: "image/png",
-      },
-      {
-        url: FAVICON,
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: FAVICON,
-        sizes: "192x192",
-        type: "image/png",
+        url:
+          FAVICON,
+
+        type:
+          "image/png",
       },
     ],
 
@@ -96,15 +96,14 @@ export const metadata: Metadata = {
 
     apple: [
       {
-        url: FAVICON,
-        sizes: "180x180",
-        type: "image/png",
+        url:
+          FAVICON,
+
+        type:
+          "image/png",
       },
     ],
   },
-
-  manifest:
-    undefined,
 
   openGraph: {
     type:
@@ -123,7 +122,7 @@ export const metadata: Metadata = {
       "707스카이 | 서울·경기·인천 스카이차",
 
     description:
-      "서울·경기·인천 스카이차 전문. 1톤부터 5톤까지 간판, 외벽, 전기·조명, 철골 및 각종 고소작업 현장에 맞는 차량을 안내합니다.",
+      "서울·경기·인천 스카이차 전문. 1톤부터 5톤까지 간판, 외벽, 전기·조명, 철골 및 각종 고소작업 현장 상담.",
 
     images: [
       {
@@ -150,22 +149,11 @@ export const metadata: Metadata = {
       "707스카이 | 서울·경기·인천 스카이차",
 
     description:
-      "서울·경기·인천 스카이차 전문 707스카이. 1톤·2.5톤·3.5톤·4.5톤·5톤 고소작업 안내.",
+      "서울·경기·인천 스카이차 전문 707스카이.",
 
     images: [
       "/IMG_2251.jpeg",
     ],
-  },
-
-  other: {
-    "format-detection":
-      "telephone=yes",
-
-    "msapplication-TileImage":
-      FAVICON,
-
-    "msapplication-TileColor":
-      "#0d100b",
   },
 };
 
@@ -190,11 +178,11 @@ export default function RootLayout({
     logo:
       `${SITE}${FAVICON}`,
 
-    image:
-      `${SITE}${FAVICON}`,
+    telephone:
+      PHONE,
 
     description:
-      "서울·경기·인천 지역을 중심으로 1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차 고소작업을 안내하는 707스카이.",
+      "서울·경기·인천 지역을 중심으로 1톤·2.5톤·3.5톤·4.5톤·5톤 스카이차 고소작업 상담을 진행하는 707스카이.",
 
     areaServed: [
       {
@@ -221,39 +209,6 @@ export default function RootLayout({
           "인천",
       },
     ],
-  };
-
-  const webSiteJsonLd = {
-    "@context":
-      "https://schema.org",
-
-    "@type":
-      "WebSite",
-
-    name:
-      "707스카이",
-
-    url:
-      SITE,
-
-    inLanguage:
-      "ko-KR",
-
-    publisher: {
-      "@type":
-        "Organization",
-
-      name:
-        "707스카이",
-
-      logo: {
-        "@type":
-          "ImageObject",
-
-        url:
-          `${SITE}${FAVICON}`,
-      },
-    },
   };
 
   return (
@@ -286,16 +241,6 @@ export default function RootLayout({
           href={FAVICON}
         />
 
-        {/*
-          네이버 서치어드바이저에서
-          소유확인 코드를 받으면 아래에 추가
-
-          <meta
-            name="naver-site-verification"
-            content="네이버에서 받은 코드"
-          />
-        */}
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -305,20 +250,12 @@ export default function RootLayout({
               ),
           }}
         />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html:
-              JSON.stringify(
-                webSiteJsonLd
-              ),
-          }}
-        />
       </head>
 
       <body>
         {children}
+
+        <CallBar />
       </body>
     </html>
   );
