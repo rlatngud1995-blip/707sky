@@ -14,7 +14,6 @@ body {
     "Pretendard",
     "Noto Sans KR",
     sans-serif;
-
   background: #e9e9e1;
   color: #10120e;
 }
@@ -34,35 +33,29 @@ main {
   overflow: hidden;
 }
 
-/* =========================
-   HERO
-========================= */
+/* =========================================================
+   MAIN HERO
+========================================================= */
 
 .hero {
   position: relative;
   min-height: 100svh;
-
   color: white;
-
   background: #0c0f0b;
-
   overflow: hidden;
 }
 
 .heroPhoto {
   position: absolute;
   inset: 0;
-
   background-size: cover;
   background-position: center 44%;
-
   transform: scale(1.02);
 }
 
 .heroShade {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       90deg,
@@ -81,7 +74,6 @@ main {
 .heroGrid {
   position: absolute;
   inset: 0;
-
   background-image:
     linear-gradient(
       rgba(255, 255, 255, 0.025) 1px,
@@ -92,27 +84,19 @@ main {
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px
     );
-
   background-size: 70px 70px;
 }
-
-/* HEADER */
 
 .header {
   position: relative;
   z-index: 20;
-
   max-width: 1440px;
   margin: 0 auto;
-
   height: 92px;
-
   padding: 0 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -126,26 +110,21 @@ main {
   font-size: 38px;
   line-height: 1;
   font-weight: 900;
-
   letter-spacing: -4px;
 }
 
 .logoSky {
   font-size: 12px;
   font-weight: 900;
-
   letter-spacing: 6px;
-
   color: #9cab70;
 }
 
 .nav {
   display: flex;
   gap: 35px;
-
   font-size: 13px;
   font-weight: 700;
-
   color: rgba(255, 255, 255, 0.72);
 }
 
@@ -157,49 +136,32 @@ main {
   color: #adbb80;
 }
 
-/* HERO CONTENT */
-
 .heroInner {
   position: relative;
   z-index: 10;
-
   max-width: 1440px;
   margin: 0 auto;
-
-  padding:
-    clamp(100px, 15vh, 160px)
-    40px
-    190px;
+  padding: clamp(100px, 15vh, 160px) 40px 190px;
 }
 
 .heroLabel {
   display: inline-flex;
-
   padding: 8px 12px;
-
   border: 1px solid rgba(170, 187, 119, 0.5);
-
   margin-bottom: 32px;
-
   color: #afbe7e;
-
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 3px;
-
   white-space: nowrap;
 }
 
 .heroInner h1 {
   max-width: 950px;
-
   font-size: clamp(52px, 7.5vw, 105px);
   line-height: 0.99;
-
   letter-spacing: -7px;
-
   font-weight: 500;
-
   word-break: keep-all;
 }
 
@@ -210,32 +172,25 @@ main {
 
 .heroDescription {
   margin-top: 34px;
-
   color: rgba(255, 255, 255, 0.67);
-
   font-size: 17px;
   line-height: 1.85;
-
   word-break: keep-all;
 }
 
 .heroButtons {
   display: flex;
   gap: 10px;
-
   margin-top: 40px;
 }
 
 .mainButton,
 .subButton {
   min-width: 168px;
-
   padding: 18px 22px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   font-size: 13px;
   font-weight: 900;
 }
@@ -247,47 +202,33 @@ main {
 
 .subButton {
   border: 1px solid rgba(255, 255, 255, 0.3);
-
   color: white;
 }
-
-/* HERO STATUS */
 
 .heroStatus {
   position: absolute;
   z-index: 10;
-
   left: 0;
   bottom: 0;
-
   width: 100%;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   background: rgba(9, 12, 8, 0.58);
-
   backdrop-filter: blur(10px);
-
   border-top: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .heroStatus div {
   min-height: 78px;
-
   padding: 0 40px;
-
   display: flex;
   align-items: center;
-
   gap: 20px;
-
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .heroStatus span {
   color: #a7b676;
-
   font-size: 10px;
   font-weight: 900;
 }
@@ -296,15 +237,13 @@ main {
   font-size: 13px;
 }
 
-/* =========================
+/* =========================================================
    COMMON
-========================= */
+========================================================= */
 
 .smallTitle {
   display: block;
-
   color: #73804e;
-
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 3px;
@@ -318,143 +257,110 @@ main {
   color: rgba(12, 15, 10, 0.62);
 }
 
-/* =========================
-   INTRO
-========================= */
+/* =========================================================
+   MAIN INTRO
+========================================================= */
 
 .intro {
   max-width: 1400px;
-
   margin: 0 auto;
-
   padding: 130px 40px 145px;
 }
 
 .introLayout {
   margin-top: 28px;
-
   display: grid;
-
   grid-template-columns: 1.35fr 0.65fr;
-
   gap: 100px;
-
   align-items: end;
 }
 
 .intro h2 {
   font-size: clamp(50px, 6vw, 82px);
-
   line-height: 1.05;
-
   letter-spacing: -6px;
-
   word-break: keep-all;
 }
 
 .introText strong {
   display: block;
-
   margin-bottom: 23px;
-
   font-size: 21px;
 }
 
 .introText p {
   margin-top: 13px;
-
   color: #72766c;
-
   font-size: 14px;
   line-height: 1.85;
-
   word-break: keep-all;
 }
 
-/* =========================
-   VEHICLES
-========================= */
+/* =========================================================
+   MAIN VEHICLES
+========================================================= */
 
 .vehicleSection {
   padding: 120px 40px;
-
   background: #f2f1eb;
 }
 
 .vehicleSection > * {
   max-width: 1400px;
-
   margin-left: auto;
   margin-right: auto;
 }
 
 .sectionHeader {
   display: flex;
-
   justify-content: space-between;
   align-items: flex-end;
-
   margin-bottom: 50px;
 }
 
 .sectionHeader h2 {
   margin-top: 22px;
-
   font-size: clamp(45px, 5vw, 67px);
-
   letter-spacing: -5px;
-
   word-break: keep-all;
 }
 
 .sectionHeader > p {
   color: #74786d;
-
   text-align: right;
-
   font-size: 13px;
   line-height: 1.8;
 }
 
 .vehicleGrid {
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
-
   gap: 1px;
-
   background: #c9c9bf;
-
   border: 1px solid #c9c9bf;
 }
 
 .vehicleCard {
   background: #f2f1eb;
-
   transition: 0.25s ease;
 }
 
 .vehiclePhoto {
   position: relative;
-
   height: 330px;
-
   overflow: hidden;
 }
 
 .vehiclePhoto img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   transition: transform 0.45s ease;
 }
 
 .vehiclePhotoShade {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       180deg,
@@ -470,425 +376,1185 @@ main {
 
 .vehicleIndex {
   position: absolute;
-
   left: 20px;
   top: 19px;
-
   color: rgba(255, 255, 255, 0.85);
-
   font-size: 10px;
   font-weight: 900;
 }
 
 .vehicleLink {
   position: absolute;
-
   right: 18px;
   top: 15px;
-
   color: white;
-
   font-size: 21px;
 }
 
 .vehicleInfo {
   min-height: 210px;
-
   padding: 24px 20px 28px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
 }
 
 .vehicleInfo h3 {
   font-size: 35px;
-
   line-height: 1;
-
   letter-spacing: -3px;
 }
 
 .vehicleInfo span {
   display: block;
-
   margin-top: 7px;
-
   color: #7b8756;
-
   font-size: 9px;
-
   font-weight: 900;
-
   letter-spacing: 2px;
 }
 
 .vehicleInfo p {
   color: #74786d;
-
   font-size: 12px;
-
   line-height: 1.75;
-
   word-break: keep-all;
 }
 
-/* =========================
-   WORK
-========================= */
+/* =========================================================
+   MAIN WORK
+========================================================= */
 
 .workSection {
   background: #11150f;
-
   color: white;
-
   padding: 130px 40px;
 }
 
 .workInner {
   max-width: 1320px;
-
   margin: 0 auto;
 }
 
 .workHeading {
   margin-top: 25px;
   margin-bottom: 60px;
-
   display: flex;
-
   justify-content: space-between;
   align-items: flex-end;
 }
 
 .workHeading h2 {
   font-size: clamp(48px, 6vw, 77px);
-
   line-height: 1.07;
-
   letter-spacing: -5px;
-
   word-break: keep-all;
 }
 
 .workHeading > p {
   color: rgba(255, 255, 255, 0.52);
-
   text-align: right;
-
   font-size: 13px;
   line-height: 1.8;
 }
 
 .workGrid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .workCard {
   min-height: 180px;
-
   padding: 25px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .workCard > span {
   color: #9aa96b;
-
   font-size: 10px;
 }
 
 .workCard strong {
   display: block;
-
   font-size: 20px;
 }
 
 .workCard p {
   margin-top: 8px;
-
   color: rgba(255, 255, 255, 0.45);
-
   font-size: 12px;
 }
 
-/* =========================
-   AREA
-========================= */
+/* =========================================================
+   MAIN AREA
+========================================================= */
 
 .areaSection {
   max-width: 1400px;
-
   margin: 0 auto;
-
   padding: 130px 40px;
 }
 
 .areaGrid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   border-top: 1px solid #c3c4ba;
   border-left: 1px solid #c3c4ba;
 }
 
 .areaCard {
   min-height: 355px;
-
   padding: 27px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
   border-right: 1px solid #c3c4ba;
   border-bottom: 1px solid #c3c4ba;
-
   transition: 0.25s ease;
 }
 
 .areaCard:hover {
   background: #141811;
-
   color: white;
 }
 
 .areaTop {
   display: flex;
-
   justify-content: space-between;
-
   color: #777c6f;
-
   font-size: 11px;
 }
 
 .areaEnglish {
   display: block;
-
   color: #798553;
-
   font-size: 9px;
-
   letter-spacing: 3px;
-
   font-weight: 900;
 }
 
 .areaCard h3 {
   margin-top: 10px;
-
   font-size: 56px;
-
   line-height: 1;
-
   letter-spacing: -5px;
 }
 
 .areaCard p {
   margin-top: 18px;
-
   color: #75796e;
-
   font-size: 13px;
 }
 
-/* =========================
-   BRAND
-========================= */
+/* =========================================================
+   MAIN BRAND
+========================================================= */
 
 .brandSection {
   position: relative;
-
   min-height: 620px;
-
   padding: 110px 40px;
-
   background: #0d100c;
-
   color: white;
-
   overflow: hidden;
 }
 
 .brandNumber {
   position: absolute;
-
   right: -40px;
   bottom: -135px;
-
   color: rgba(255, 255, 255, 0.045);
-
   font-size: min(45vw, 650px);
-
   font-weight: 900;
-
   letter-spacing: -55px;
-
   line-height: 1;
 }
 
 .brandContent {
   position: relative;
   z-index: 2;
-
   max-width: 1320px;
-
   margin: 0 auto;
 }
 
 .brandContent > span {
   color: #9ead6e;
-
   font-size: 10px;
-
   font-weight: 900;
-
   letter-spacing: 3px;
 }
 
 .brandContent h2 {
   margin-top: 32px;
-
   font-size: clamp(50px, 6.5vw, 90px);
-
   line-height: 1.03;
-
   letter-spacing: -6px;
-
   word-break: keep-all;
 }
 
 .brandContent p {
   margin-top: 45px;
-
   color: rgba(255, 255, 255, 0.52);
-
   font-size: 15px;
-
   line-height: 1.8;
 }
 
-/* =========================
+/* =========================================================
    CTA
-========================= */
+========================================================= */
 
 .cta {
   padding: 120px 40px 130px;
-
   background: #95a269;
 }
 
 .cta > * {
   max-width: 1320px;
-
   margin-left: auto;
   margin-right: auto;
 }
 
 .cta h2 {
   margin-top: 23px;
-
   font-size: clamp(50px, 6vw, 82px);
-
   line-height: 1.05;
-
   letter-spacing: -6px;
-
   word-break: keep-all;
 }
 
 .cta p {
   margin-top: 30px;
-
   font-size: 15px;
-
   line-height: 1.85;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
 
 footer {
   background: #0c0f0a;
-
   color: white;
-
   padding: 55px 40px;
-
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr;
-
   align-items: end;
 }
 
 .footerLogo {
   display: flex;
-
   align-items: baseline;
-
   gap: 10px;
 }
 
 .footerLogo strong {
   font-size: 38px;
-
   letter-spacing: -4px;
 }
 
 .footerLogo span {
   color: #99a769;
-
   font-size: 10px;
-
   font-weight: 900;
-
   letter-spacing: 5px;
 }
 
 .footerCenter {
   color: rgba(255, 255, 255, 0.48);
-
   font-size: 11px;
-
   line-height: 1.8;
 }
 
 .copyright {
   color: rgba(255, 255, 255, 0.35);
-
   font-size: 9px;
-
   text-align: right;
 }
 
-/* =========================
-   TABLET
-========================= */
+/* =========================================================
+   VEHICLE DETAIL PAGE
+========================================================= */
+
+.vehiclePage {
+  background: #ecebe4;
+  color: #11130f;
+}
+
+.vehicleDetailHero {
+  position: relative;
+  min-height: 720px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.vehicleDetailHeroInner {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 35px 40px 100px;
+}
+
+.vehicleDetailLogo {
+  display: inline-flex;
+  gap: 9px;
+  align-items: baseline;
+}
+
+.vehicleDetailLogo strong {
+  font-size: 34px;
+  letter-spacing: -3px;
+}
+
+.vehicleDetailLogo span {
+  color: #a4b274;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.vehicleBreadcrumb {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.vehicleBreadcrumb strong {
+  color: #a8b878;
+}
+
+.vehicleDetailLabel {
+  display: inline-block;
+  margin-top: 55px;
+  padding: 7px 10px;
+  border: 1px solid rgba(174, 190, 124, 0.45);
+  color: #adbb7c;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.vehicleDetailHero h1 {
+  margin-top: 26px;
+  max-width: 850px;
+  font-size: clamp(60px, 8vw, 105px);
+  line-height: 0.95;
+  letter-spacing: -7px;
+  word-break: keep-all;
+}
+
+.vehicleDetailHero h1 strong {
+  color: #a4b274;
+}
+
+.vehicleDetailHero p {
+  max-width: 650px;
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.vehicleDetailIntro,
+.vehicleSuitable,
+.otherVehicleSection,
+.vehicleRegionSection,
+.vehicleSeo {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 110px 40px;
+}
+
+.vehicleDetailIntro > span,
+.vehicleDetailHeading > span,
+.vehicleSeo > span {
+  color: #74804f;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.vehicleDetailIntroGrid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 100px;
+  align-items: end;
+}
+
+.vehicleDetailIntroGrid h2,
+.vehicleDetailHeading h2,
+.vehicleSeo h2 {
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -5px;
+  word-break: keep-all;
+}
+
+.vehicleDetailIntroGrid p,
+.vehicleSeo p {
+  margin-top: 16px;
+  color: #73776d;
+  font-size: 14px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.vehicleDetailIntroGrid img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.vehicleDetailHeading h2 {
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+
+.vehicleSuitableGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #c5c6bc;
+  border-left: 1px solid #c5c6bc;
+}
+
+.vehicleSuitableGrid article {
+  min-height: 230px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #c5c6bc;
+  border-bottom: 1px solid #c5c6bc;
+}
+
+.vehicleSuitableGrid article > span {
+  color: #7c8758;
+  font-size: 9px;
+}
+
+.vehicleSuitableGrid h3 {
+  font-size: 23px;
+  line-height: 1.35;
+  letter-spacing: -1.5px;
+  word-break: keep-all;
+}
+
+.otherVehicleSection {
+  max-width: none;
+  background: #11140f;
+  color: white;
+}
+
+.otherVehicleSection > * {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.otherVehicleSection .vehicleDetailHeading > span {
+  color: #9aaa6b;
+}
+
+.otherVehicleGrid {
+  max-width: 1320px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.otherVehicleGrid > a {
+  background: #11140f;
+}
+
+.otherVehicleImage {
+  height: 300px;
+  overflow: hidden;
+}
+
+.otherVehicleImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.35s ease;
+}
+
+.otherVehicleGrid a:hover img {
+  transform: scale(1.05);
+}
+
+.otherVehicleInfo {
+  min-height: 120px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.otherVehicleInfo strong {
+  font-size: 31px;
+  letter-spacing: -2px;
+}
+
+.otherVehicleInfo span {
+  color: #9cab70;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.vehicleRegionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #c5c6bc;
+  border-left: 1px solid #c5c6bc;
+}
+
+.vehicleRegionGrid a {
+  min-height: 165px;
+  padding: 22px;
+  position: relative;
+  border-right: 1px solid #c5c6bc;
+  border-bottom: 1px solid #c5c6bc;
+  transition: 0.2s ease;
+}
+
+.vehicleRegionGrid a:hover {
+  background: #131711;
+  color: white;
+}
+
+.vehicleRegionGrid span {
+  color: #788252;
+  font-size: 9px;
+}
+
+.vehicleRegionGrid strong {
+  display: block;
+  margin-top: 36px;
+  font-size: 25px;
+  letter-spacing: -1.5px;
+}
+
+.vehicleRegionGrid b {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  font-weight: 400;
+}
+
+.vehicleSeo {
+  max-width: 900px;
+}
+
+.vehicleSeo h2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.vehicleDetailFooter {
+  padding: 50px 40px;
+  background: #0d100b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.vehicleDetailFooter a {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.vehicleDetailFooter strong {
+  font-size: 35px;
+  letter-spacing: -3px;
+}
+
+.vehicleDetailFooter span {
+  color: #99a869;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+.vehicleDetailFooter p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+}
+
+/* =========================================================
+   REGION DETAIL PAGE
+========================================================= */
+
+.regionPage {
+  background: #ecebe4;
+  color: #11130f;
+}
+
+.regionHero {
+  min-height: 720px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.regionHeroInner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 35px 40px 100px;
+}
+
+.regionLogo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.regionLogo strong {
+  font-size: 34px;
+  letter-spacing: -3px;
+}
+
+.regionLogo span {
+  color: #a4b274;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.regionBreadcrumb {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.regionBreadcrumb strong {
+  color: #a8b878;
+}
+
+.regionLabel {
+  display: inline-block;
+  margin-top: 55px;
+  padding: 7px 10px;
+  border: 1px solid rgba(174, 190, 124, 0.45);
+  color: #adbb7c;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.regionHero h1 {
+  margin-top: 26px;
+  font-size: clamp(60px, 8vw, 105px);
+  line-height: 0.95;
+  letter-spacing: -7px;
+  word-break: keep-all;
+}
+
+.regionHero h1 strong {
+  color: #a4b274;
+}
+
+.regionHero p {
+  max-width: 650px;
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 15px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.regionVehicleTags {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.regionVehicleTags span {
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+}
+
+.regionIntro,
+.regionServices,
+.regionVehicleSection,
+.regionSeoSection,
+.regionNearby {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 110px 40px;
+}
+
+.regionSmallTitle,
+.regionSectionHead > span,
+.regionSeoSection > span {
+  color: #74804f;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.regionIntroGrid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
+  align-items: end;
+}
+
+.regionIntroGrid h2,
+.regionSectionHead h2,
+.regionSeoSection h2 {
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -5px;
+  word-break: keep-all;
+}
+
+.regionIntroGrid p,
+.regionSeoSection p {
+  margin-top: 16px;
+  color: #73776d;
+  font-size: 14px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.regionSectionHead h2 {
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+
+.regionServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #c5c6bc;
+  border-left: 1px solid #c5c6bc;
+}
+
+.regionServiceGrid article {
+  min-height: 260px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #c5c6bc;
+  border-bottom: 1px solid #c5c6bc;
+}
+
+.regionServiceGrid article > span {
+  color: #7c8758;
+  font-size: 9px;
+}
+
+.regionServiceGrid h3 {
+  font-size: 25px;
+  letter-spacing: -2px;
+}
+
+.regionServiceGrid p {
+  color: #777b71;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.regionVehicleSection {
+  max-width: none;
+  background: #11140f;
+  color: white;
+}
+
+.regionVehicleSection > * {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.regionVehicleGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.regionVehicleGrid a {
+  min-height: 190px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.regionVehicleGrid strong {
+  font-size: 35px;
+  letter-spacing: -3px;
+}
+
+.regionVehicleGrid span {
+  color: #9cab70;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.regionSeoSection {
+  max-width: 900px;
+}
+
+.regionSeoSection h2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.regionNearbyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #c5c6bc;
+  border-left: 1px solid #c5c6bc;
+}
+
+.regionNearbyGrid a {
+  min-height: 145px;
+  padding: 22px;
+  position: relative;
+  border-right: 1px solid #c5c6bc;
+  border-bottom: 1px solid #c5c6bc;
+}
+
+.regionNearbyGrid span {
+  display: block;
+  color: #788252;
+  font-size: 9px;
+}
+
+.regionNearbyGrid strong {
+  display: block;
+  margin-top: 25px;
+  font-size: 24px;
+}
+
+.regionNearbyGrid b {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 400;
+}
+
+.regionFooter {
+  padding: 50px 40px;
+  background: #0d100b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.regionFooter a {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.regionFooter strong {
+  font-size: 35px;
+  letter-spacing: -3px;
+}
+
+.regionFooter span {
+  color: #99a869;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+.regionFooter p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+}
+
+/* =========================================================
+   PROVINCE PAGE
+========================================================= */
+
+.provincePage {
+  background: #ecebe4;
+  color: #11130f;
+}
+
+.provinceHero {
+  min-height: 650px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.provinceHeroInner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 35px 40px 100px;
+}
+
+.provinceLogo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.provinceLogo strong {
+  font-size: 34px;
+  letter-spacing: -3px;
+}
+
+.provinceLogo span {
+  color: #a4b274;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.provinceBreadcrumb {
+  margin-top: 100px;
+  display: flex;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+}
+
+.provinceBreadcrumb strong {
+  color: #a7b878;
+}
+
+.provinceLabel {
+  display: inline-block;
+  margin-top: 55px;
+  padding: 7px 10px;
+  border: 1px solid rgba(174, 190, 124, 0.45);
+  color: #adbb7c;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.provinceHero h1 {
+  margin-top: 25px;
+  font-size: clamp(60px, 8vw, 105px);
+  line-height: 0.95;
+  letter-spacing: -7px;
+  word-break: keep-all;
+}
+
+.provinceHero h1 strong {
+  color: #a4b274;
+}
+
+.provinceHero p {
+  max-width: 700px;
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 14px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.provinceRegionSection,
+.provinceSeo {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 110px 40px;
+}
+
+.provinceSectionHead > span,
+.provinceSeo > span {
+  color: #74804f;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.provinceSectionHead h2,
+.provinceSeo h2 {
+  margin-top: 20px;
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -5px;
+  word-break: keep-all;
+}
+
+.provinceSectionHead > p {
+  margin-top: 20px;
+  color: #75796e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.provinceRegionGrid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #c5c6bc;
+  border-left: 1px solid #c5c6bc;
+}
+
+.provinceRegionGrid a {
+  position: relative;
+  min-height: 180px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #c5c6bc;
+  border-bottom: 1px solid #c5c6bc;
+  transition: 0.2s ease;
+}
+
+.provinceRegionGrid a:hover {
+  background: #131711;
+  color: white;
+}
+
+.provinceRegionGrid > a > span {
+  color: #798554;
+  font-size: 9px;
+}
+
+.provinceRegionGrid strong {
+  display: block;
+  font-size: 26px;
+  letter-spacing: -2px;
+}
+
+.provinceRegionGrid p {
+  margin-top: 6px;
+  color: #777b71;
+  font-size: 11px;
+}
+
+.provinceRegionGrid b {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  font-weight: 400;
+}
+
+.provinceVehicleSection {
+  padding: 110px 40px;
+  background: #11140f;
+  color: white;
+}
+
+.provinceVehicleSection > * {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.provinceSectionHead.light > span {
+  color: #a4b376;
+}
+
+.provinceVehicleGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 45px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.provinceVehicleGrid a {
+  min-height: 180px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.provinceVehicleGrid strong {
+  font-size: 34px;
+  letter-spacing: -3px;
+}
+
+.provinceVehicleGrid span {
+  color: #9cab70;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.provinceSeo {
+  max-width: 900px;
+}
+
+.provinceSeo h2 {
+  margin-bottom: 30px;
+}
+
+.provinceSeo p {
+  margin-top: 15px;
+  color: #73776d;
+  font-size: 14px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.provinceFooter {
+  padding: 50px 40px;
+  background: #0d100b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.provinceFooter a {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.provinceFooter strong {
+  font-size: 35px;
+  letter-spacing: -3px;
+}
+
+.provinceFooter span {
+  color: #99a869;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+.provinceFooter p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+}
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
 
 @media (max-width: 950px) {
   .header {
     height: 76px;
-
     padding: 0 20px;
   }
 
@@ -937,21 +1603,15 @@ footer {
   .mainButton,
   .subButton {
     flex: 1;
-
     min-width: 0;
   }
 
   .heroStatus div {
     min-height: 68px;
-
     padding: 10px 13px;
-
     gap: 8px;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: flex-start;
   }
 
@@ -965,12 +1625,7 @@ footer {
 
   .introLayout {
     grid-template-columns: 1fr;
-
     gap: 45px;
-  }
-
-  .intro h2 {
-    letter-spacing: -4px;
   }
 
   .vehicleSection {
@@ -983,7 +1638,6 @@ footer {
 
   .sectionHeader > p {
     margin-top: 20px;
-
     text-align: left;
   }
 
@@ -1009,18 +1663,11 @@ footer {
 
   .workHeading > p {
     margin-top: 25px;
-
     text-align: left;
   }
 
   .workGrid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .workCard {
-    min-height: 145px;
-
-    padding: 18px;
   }
 
   .areaSection {
@@ -1031,45 +1678,17 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .areaCard {
-    min-height: 245px;
-  }
-
-  .areaCard h3 {
-    font-size: 46px;
-  }
-
   .brandSection {
     min-height: 560px;
-
     padding: 90px 20px;
-  }
-
-  .brandNumber {
-    right: -20px;
-
-    bottom: -60px;
-
-    font-size: 75vw;
-
-    letter-spacing: -30px;
-  }
-
-  .brandContent h2 {
-    letter-spacing: -4px;
   }
 
   .cta {
     padding: 90px 20px;
   }
 
-  .cta h2 {
-    letter-spacing: -4px;
-  }
-
   footer {
     padding: 45px 20px;
-
     display: block;
   }
 
@@ -1079,16 +1698,15 @@ footer {
 
   .copyright {
     margin-top: 25px;
-
     text-align: left;
   }
 }
 
-/* =========================
-   MOBILE HERO FIX
-========================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .hero {
     min-height: 100svh;
   }
@@ -1096,117 +1714,49 @@ footer {
   .heroPhoto {
     background-size: cover;
     background-position: 62% center;
-
-    opacity: 1;
-  }
-
-  .heroShade {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(7, 9, 6, 0.82) 0%,
-        rgba(7, 9, 6, 0.52) 55%,
-        rgba(7, 9, 6, 0.3) 100%
-      ),
-      linear-gradient(
-        0deg,
-        rgba(5, 7, 5, 0.82) 0%,
-        rgba(5, 7, 5, 0.15) 55%,
-        rgba(5, 7, 5, 0.22) 100%
-      );
-  }
-
-  .heroGrid {
-    background-size: 58px 58px;
   }
 
   .heroInner {
-    width: 100%;
-    max-width: none;
-
-    padding:
-      110px
-      22px
-      155px;
+    padding: 110px 22px 155px;
   }
 
   .heroLabel {
     margin-bottom: 22px;
-
     padding: 7px 9px;
-
     font-size: 9px;
-
     letter-spacing: 1px;
-
-    white-space: nowrap;
   }
 
   .heroInner h1 {
     width: 100%;
     max-width: 350px;
-
-    font-size: 42px !important;
-
+    font-size: 42px;
     line-height: 1.08;
-
-    letter-spacing: -3px !important;
-
-    word-break: keep-all;
-
-    overflow-wrap: normal;
-  }
-
-  .heroInner h1 strong {
-    display: inline;
-
-    color: #a9b97a;
+    letter-spacing: -3px;
   }
 
   .heroDescription {
     max-width: 330px;
-
     margin-top: 25px;
-
     font-size: 13px;
-
-    line-height: 1.75;
-
-    word-break: keep-all;
   }
 
   .heroButtons {
-    width: 100%;
     max-width: 330px;
-
     margin-top: 30px;
   }
 
   .mainButton,
   .subButton {
     min-height: 54px;
-
     padding: 0 15px;
-
     font-size: 11px;
-  }
-
-  .heroStatus {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .heroStatus div {
     min-height: 72px;
-
     padding: 11px 9px;
-
     gap: 5px;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: flex-start;
   }
 
   .heroStatus span {
@@ -1215,89 +1765,295 @@ footer {
 
   .heroStatus strong {
     font-size: 9px;
-
     line-height: 1.35;
-
     word-break: keep-all;
   }
 
-  .intro {
-    padding: 80px 20px;
+  .intro,
+  .vehicleSection,
+  .workSection,
+  .areaSection,
+  .cta {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  .intro h2 {
-    font-size: 43px;
-
+  .intro h2,
+  .sectionHeader h2,
+  .workHeading h2,
+  .brandContent h2,
+  .cta h2 {
+    font-size: 42px;
     line-height: 1.08;
-
     letter-spacing: -3px;
-  }
-
-  .sectionHeader h2 {
-    font-size: 43px;
-
-    letter-spacing: -3px;
-  }
-
-  .vehicleSection {
-    padding: 80px 20px;
   }
 
   .vehiclePhoto {
     height: 310px;
   }
 
-  .vehicleInfo h3 {
-    font-size: 32px;
-  }
-
-  .workSection {
-    padding: 80px 20px;
-  }
-
-  .workHeading h2 {
-    font-size: 43px;
-
-    letter-spacing: -3px;
-  }
-
   .workGrid {
     grid-template-columns: 1fr;
   }
 
-  .areaSection {
-    padding: 80px 20px;
+  /* VEHICLE DETAIL MOBILE */
+
+  .vehicleDetailHero {
+    min-height: 620px;
+    background-position: center;
   }
 
-  .areaCard h3 {
-    font-size: 44px;
-
-    letter-spacing: -3px;
+  .vehicleDetailHeroInner {
+    padding: 28px 20px 70px;
   }
 
-  .brandSection {
-    min-height: 510px;
-
-    padding: 80px 20px;
+  .vehicleDetailLogo strong {
+    font-size: 30px;
   }
 
-  .brandContent h2 {
-    font-size: 43px;
+  .vehicleBreadcrumb {
+    margin-top: 65px;
+  }
 
-    letter-spacing: -3px;
+  .vehicleDetailLabel {
+    margin-top: 38px;
+  }
 
+  .vehicleDetailHero h1 {
+    max-width: 100%;
+    font-size: 52px;
+    line-height: 0.98;
+    letter-spacing: -4px;
+  }
+
+  .vehicleDetailHero p {
+    max-width: 330px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .vehicleDetailIntro,
+  .vehicleSuitable,
+  .vehicleRegionSection,
+  .vehicleSeo {
+    padding: 75px 20px;
+  }
+
+  .vehicleDetailIntroGrid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .vehicleDetailIntroGrid h2,
+  .vehicleDetailHeading h2,
+  .vehicleSeo h2 {
+    font-size: 40px;
     line-height: 1.08;
-  }
-
-  .cta {
-    padding: 80px 20px;
-  }
-
-  .cta h2 {
-    font-size: 43px;
-
     letter-spacing: -3px;
+  }
 
-    line-height: 1.08;
+  .vehicleSuitableGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vehicleSuitableGrid article {
+    min-height: 175px;
+    padding: 18px;
+  }
+
+  .vehicleSuitableGrid h3 {
+    font-size: 19px;
+  }
+
+  .otherVehicleSection {
+    padding: 75px 20px;
+  }
+
+  .otherVehicleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .otherVehicleImage {
+    height: 280px;
+  }
+
+  .vehicleRegionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicleRegionGrid a {
+    min-height: 120px;
+  }
+
+  .vehicleRegionGrid strong {
+    margin-top: 25px;
+    font-size: 22px;
+  }
+
+  .vehicleDetailFooter {
+    padding: 40px 20px;
+    display: block;
+  }
+
+  .vehicleDetailFooter p {
+    margin-top: 20px;
+  }
+
+  /* REGION MOBILE */
+
+  .regionHero {
+    min-height: 620px;
+  }
+
+  .regionHeroInner {
+    padding: 28px 20px 70px;
+  }
+
+  .regionBreadcrumb {
+    margin-top: 65px;
+  }
+
+  .regionLabel {
+    margin-top: 38px;
+  }
+
+  .regionHero h1 {
+    font-size: 52px;
+    letter-spacing: -4px;
+  }
+
+  .regionIntro,
+  .regionServices,
+  .regionSeoSection,
+  .regionNearby {
+    padding: 75px 20px;
+  }
+
+  .regionIntroGrid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .regionIntroGrid h2,
+  .regionSectionHead h2,
+  .regionSeoSection h2 {
+    font-size: 40px;
+    letter-spacing: -3px;
+  }
+
+  .regionServiceGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .regionServiceGrid article {
+    min-height: 190px;
+    padding: 18px;
+  }
+
+  .regionVehicleSection {
+    padding: 75px 20px;
+  }
+
+  .regionVehicleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .regionVehicleGrid a {
+    min-height: 115px;
+  }
+
+  .regionNearbyGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .regionFooter {
+    padding: 40px 20px;
+    display: block;
+  }
+
+  .regionFooter p {
+    margin-top: 20px;
+  }
+
+  /* PROVINCE MOBILE */
+
+  .provinceHero {
+    min-height: 590px;
+  }
+
+  .provinceHeroInner {
+    padding: 28px 20px 75px;
+  }
+
+  .provinceBreadcrumb {
+    margin-top: 65px;
+  }
+
+  .provinceLabel {
+    margin-top: 38px;
+  }
+
+  .provinceHero h1 {
+    font-size: 52px;
+    letter-spacing: -4px;
+  }
+
+  .provinceRegionSection,
+  .provinceSeo {
+    padding: 75px 20px;
+  }
+
+  .provinceSectionHead h2,
+  .provinceSeo h2 {
+    font-size: 40px;
+    letter-spacing: -3px;
+  }
+
+  .provinceRegionGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .provinceRegionGrid a {
+    min-height: 145px;
+    padding: 17px;
+  }
+
+  .provinceRegionGrid strong {
+    font-size: 21px;
+  }
+
+  .provinceVehicleSection {
+    padding: 75px 20px;
+  }
+
+  .provinceVehicleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .provinceVehicleGrid a {
+    min-height: 110px;
+  }
+
+  .provinceFooter {
+    padding: 40px 20px;
+    display: block;
+  }
+
+  .provinceFooter p {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .vehicleSuitableGrid,
+  .regionServiceGrid,
+  .regionNearbyGrid,
+  .provinceRegionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicleSuitableGrid article,
+  .regionServiceGrid article {
+    min-height: 150px;
   }
 }
