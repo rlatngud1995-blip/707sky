@@ -1,26 +1,8 @@
 import Link from "next/link";
+import PricePopup from "./components/PricePopup";
 
-const PHONE =
-  "01094134686";
-
-const DISPLAY_PHONE =
-  "010-9413-4686";
-
-const heroSlides = [
-  {
-    image:
-      "/IMG_2251.jpeg",
-
-    eyebrow:
-      "SEOUL · GYEONGGI · INCHEON",
-
-    title1:
-      "현장에 필요한",
-
-    title2:
-      "스카이차를 정확하게.",
-  },
-];
+const PHONE = "01094134686";
+const DISPLAY_PHONE = "010-9413-4686";
 
 const vehicles = [
   {
@@ -30,7 +12,6 @@ const vehicles = [
     desc:
       "좁은 도로와 소규모 현장에 유리한 기동성 중심 스카이차",
   },
-
   {
     name: "2.5톤",
     slug: "2-5ton",
@@ -38,7 +19,6 @@ const vehicles = [
     desc:
       "간판·철골·외벽 등 다양한 고소작업 현장에서 활용",
   },
-
   {
     name: "3.5톤",
     slug: "3-5ton",
@@ -46,7 +26,6 @@ const vehicles = [
     desc:
       "공장 및 실내외 시설물 고소작업에 적합한 스카이차",
   },
-
   {
     name: "4.5톤",
     slug: "4-5ton",
@@ -54,7 +33,6 @@ const vehicles = [
     desc:
       "중대형 현장과 높은 작업 위치에 대응하는 장비",
   },
-
   {
     name: "5톤",
     slug: "5ton",
@@ -68,43 +46,32 @@ const workTypes = [
   {
     number: "01",
     title: "간판 작업",
-    desc:
-      "간판 설치·철거 및 유지보수",
+    desc: "간판 설치·철거 및 유지보수",
   },
-
   {
     number: "02",
     title: "외벽 작업",
-    desc:
-      "건물 외벽 및 고층부 작업",
+    desc: "건물 외벽 및 고층부 작업",
   },
-
   {
     number: "03",
     title: "전기·조명",
-    desc:
-      "외부 조명 및 전기 시설 작업",
+    desc: "외부 조명 및 전기 시설 작업",
   },
-
   {
     number: "04",
     title: "철골 작업",
-    desc:
-      "공장·창고 철골 및 구조물 작업",
+    desc: "공장·창고 철골 및 구조물 작업",
   },
-
   {
     number: "05",
     title: "시설물 작업",
-    desc:
-      "각종 고소 시설물 설치·보수",
+    desc: "각종 고소 시설물 설치·보수",
   },
-
   {
     number: "06",
     title: "기타 고소작업",
-    desc:
-      "현장 조건에 맞춘 스카이차 배차",
+    desc: "현장 조건에 맞춘 스카이차 배차",
   },
 ];
 
@@ -113,39 +80,31 @@ const areas = [
     number: "01",
     name: "서울",
     english: "SEOUL",
-    desc:
-      "서울 25개 구 스카이차",
-    href:
-      "/area/seoul",
+    desc: "서울 25개 구 스카이차",
+    href: "/area/seoul",
   },
-
   {
     number: "02",
     name: "경기",
     english: "GYEONGGI",
-    desc:
-      "경기도 시·군 스카이차",
-    href:
-      "/area/gyeonggi",
+    desc: "경기도 시·군 스카이차",
+    href: "/area/gyeonggi",
   },
-
   {
     number: "03",
     name: "인천",
     english: "INCHEON",
-    desc:
-      "인천 구·군 스카이차",
-    href:
-      "/area/incheon",
+    desc: "인천 구·군 스카이차",
+    href: "/area/incheon",
   },
 ];
 
 export default function Home() {
-  const hero =
-    heroSlides[0];
-
   return (
     <main>
+      {/* 단가표 팝업 */}
+      <PricePopup />
+
       {/* HERO */}
 
       <section className="hero">
@@ -153,12 +112,11 @@ export default function Home() {
           className="heroPhoto"
           style={{
             backgroundImage:
-              `url("${hero.image}")`,
+              'url("/IMG_2251.jpeg")',
           }}
         />
 
         <div className="heroShade" />
-
         <div className="heroGrid" />
 
         <header className="header">
@@ -198,25 +156,22 @@ export default function Home() {
 
         <div className="heroInner">
           <div className="heroLabel">
-            {hero.eyebrow}
+            SEOUL · GYEONGGI · INCHEON
           </div>
 
           <h1>
-            {hero.title1}
-
+            현장에 필요한
             <br />
 
             <strong>
-              {hero.title2}
+              스카이차를 정확하게.
             </strong>
           </h1>
 
           <p className="heroDescription">
             서울 · 경기 · 인천
             스카이차 전문
-
             <br />
-
             1톤부터 5톤까지
             현장 조건에 맞는 차량을
             안내합니다.
@@ -245,15 +200,10 @@ export default function Home() {
           <div
             style={{
               marginTop: "18px",
-
               color:
                 "rgba(255,255,255,.65)",
-
-              fontSize:
-                "13px",
-
-              fontWeight:
-                "700",
+              fontSize: "13px",
+              fontWeight: "700",
             }}
           >
             {DISPLAY_PHONE}
@@ -297,9 +247,7 @@ export default function Home() {
         <div className="introLayout">
           <h2>
             필요한 현장에
-
             <br />
-
             필요한 장비를.
           </h2>
 
@@ -342,9 +290,7 @@ export default function Home() {
 
           <p>
             작업 환경과 높이에 따라
-
             <br />
-
             적합한 차량을 선택하세요.
           </p>
         </div>
@@ -362,9 +308,7 @@ export default function Home() {
               >
                 <div className="vehiclePhoto">
                   <img
-                    src={
-                      vehicle.image
-                    }
+                    src={vehicle.image}
                     alt={`${vehicle.name} 스카이차 작업`}
                   />
 
@@ -419,17 +363,13 @@ export default function Home() {
           <div className="workHeading">
             <h2>
               다양한 현장,
-
               <br />
-
               하나의 기준.
             </h2>
 
             <p>
               작업 조건을 확인한 후
-
               <br />
-
               현장에 적합한 장비를
               배차합니다.
             </p>
@@ -476,18 +416,14 @@ export default function Home() {
 
             <h2>
               수도권 중심
-
               <br />
-
               현장 출동
             </h2>
           </div>
 
           <p>
             서울 · 경기 · 인천
-
             <br />
-
             지역별 개별 페이지 운영
           </p>
         </div>
@@ -543,17 +479,13 @@ export default function Home() {
 
           <h2>
             현장은 다르지만
-
             <br />
-
             작업의 기준은 같습니다.
           </h2>
 
           <p>
             서울 · 경기 · 인천
-
             <br />
-
             스카이차 전문 707스카이
           </p>
         </div>
@@ -568,17 +500,13 @@ export default function Home() {
 
         <h2>
           스카이차가 필요한 현장,
-
           <br />
-
           707스카이.
         </h2>
 
         <p>
           현장 위치와 작업 내용을 알려주시면
-
           <br />
-
           필요한 차량을 안내해드립니다.
         </p>
 
@@ -587,34 +515,24 @@ export default function Home() {
           style={{
             display:
               "inline-flex",
-
             alignItems:
               "center",
-
             justifyContent:
               "center",
-
             minWidth:
               "180px",
-
             minHeight:
               "56px",
-
             marginTop:
               "32px",
-
             padding:
               "0 24px",
-
             background:
               "#10130d",
-
             color:
               "#fff",
-
             fontWeight:
               "900",
-
             fontSize:
               "13px",
           }}
