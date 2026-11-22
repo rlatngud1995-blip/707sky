@@ -11,6 +11,8 @@ import {
   getVehicle,
   vehicles,
 } from "@/data/vehicles";
+import LocalSky from "@/app/components/LocalSky";
+import { skyContent } from "@/lib/skyseo";
 
 const SITE = "https://707sky.com";
 
@@ -35,7 +37,24 @@ export function generateStaticParams() {
   );
 }
 
-export async function generateMetadata({
+/* =====================================
+   지역별 고유 제목·설명 (lib/skyseo.ts)
+===================================== */
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const base = await baseMetadata(props);
+  const p = await props.params;
+  const r = getRegion(p.province, p.district); const v = getVehicle(p.vehicle); if (!r || !v) return base; const lc = skyContent(r, v);
+  return {
+    ...base,
+    title: { absolute: lc.title },
+    description: lc.description,
+    keywords: lc.tags,
+    openGraph: { ...(base.openGraph ?? {}), title: lc.title, description: lc.description },
+  };
+}
+
+async function baseMetadata({
   params,
 }: Props): Promise<Metadata> {
   const {
@@ -695,6 +714,8 @@ export default async function RegionVehiclePage({
           </a>
         </div>
       </section>
+
+      <LocalSky region={region} vehicle={vehicle} />
 
       {/* 소개 */}
 

@@ -2422,3 +2422,59 @@ footer {
     font-size: 10px;
   }
 }
+
+/* =====================================
+   메인 추가 섹션 (차량 가이드·요금·절차·지역·안전·현장·FAQ)
+===================================== */
+
+.proSection { padding: 90px 24px; background: #f4f4ef; color: #141811; }
+.proSection.proDark { background: #11140f; color: #e9eae2; }
+.proInner { max-width: 1180px; margin: 0 auto; }
+.proTitle { margin: 12px 0 14px; font-size: clamp(30px, 5vw, 48px); letter-spacing: -2px; font-weight: 900; line-height: 1.1; }
+.proLead { max-width: 760px; margin: 0 0 30px; line-height: 1.85; font-size: 15px; color: #5b6053; }
+.proDark .proLead { color: #c5c6bc; }
+
+.proTableWrap { overflow-x: auto; border-top: 2px solid #141811; }
+.proDark .proTableWrap { border-top-color: #a4b274; }
+.proTable { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 15px; }
+.proTable th { text-align: left; padding: 15px 14px; font-size: 12px; letter-spacing: 1px; color: #74804f; border-bottom: 1px solid #c5c6bc; }
+.proDark .proTable th { color: #a4b274; border-bottom-color: #3a3f33; }
+.proTable td { padding: 17px 14px; border-bottom: 1px solid #dcddd4; line-height: 1.6; vertical-align: top; }
+.proDark .proTable td { border-bottom-color: #2a2e25; }
+.proTable td:first-child { font-weight: 900; white-space: nowrap; }
+.proTable a { color: inherit; text-decoration: none; border-bottom: 1px solid #a4b274; }
+
+.proGrid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #c5c6bc; border: 1px solid #c5c6bc; margin-top: 30px; }
+.proDark .proGrid4 { background: #2a2e25; border-color: #2a2e25; }
+.proCard { background: #f4f4ef; padding: 28px 22px; min-height: 190px; }
+.proDark .proCard { background: #11140f; }
+.proCard b { display: block; color: #74804f; font-size: 12px; letter-spacing: 1px; margin-bottom: 18px; }
+.proDark .proCard b { color: #a4b274; }
+.proCard strong { display: block; font-size: 19px; margin-bottom: 10px; }
+.proCard p { margin: 0; font-size: 14px; line-height: 1.75; color: #5b6053; }
+.proDark .proCard p { color: #c5c6bc; }
+
+.proAreaBlock { border-top: 1px solid #c5c6bc; padding: 22px 0; }
+.proAreaBlock h3 { margin: 0 0 14px; font-size: 20px; }
+.proAreaBlock h3 a { color: inherit; text-decoration: none; }
+.proAreaLinks { display: flex; flex-wrap: wrap; gap: 8px; }
+.proAreaLinks a { padding: 9px 13px; border: 1px solid #c5c6bc; font-size: 14px; font-weight: 700; color: #141811; text-decoration: none; background: #fff; }
+.proAreaLinks a:hover { border-color: #74804f; color: #74804f; }
+
+.proGallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+.proGallery figure { margin: 0; background: #fff; border: 1px solid #dcddd4; }
+.proGallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.proGallery figcaption { padding: 10px 12px; font-size: 13px; color: #5b6053; }
+
+.proFaq { border-top: 2px solid #141811; margin-top: 26px; }
+.proFaq details { border-bottom: 1px solid #c5c6bc; padding: 18px 4px; }
+.proFaq summary { font-weight: 900; font-size: 16px; cursor: pointer; }
+.proFaq p { margin: 12px 0 0; line-height: 1.85; color: #5b6053; font-size: 15px; }
+
+.proSmsLink { display: block; margin-top: 16px; font-weight: 900; font-size: 14px; color: #10130d; }
+
+@media (max-width: 860px) {
+  .proSection { padding: 64px 18px; }
+  .proGrid4 { grid-template-columns: 1fr 1fr; }
+  .proGallery { grid-template-columns: 1fr 1fr; }
+}

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import PricePopup from "./components/PricePopup";
+import { regions } from "@/data/regions";
+import { vehicles as vehicleData } from "@/data/vehicles";
+import { FAQ, smsHref } from "@/lib/skyseo";
 
 const PHONE = "01094134686";
 const DISPLAY_PHONE = "010-9413-4686";
@@ -75,6 +78,39 @@ const workTypes = [
   },
 ];
 
+const priceRows = [
+  { car: "1~3.5톤", base: "30만원", half: "40만원", day: "60만원" },
+  { car: "5톤 (45M)", base: "40만원", half: "50만원", day: "70만원" },
+  { car: "5톤 (54M)", base: "50만원", half: "70만원", day: "90만원" },
+  { car: "17.5톤 (58M)", base: "-", half: "90만원", day: "120만원" },
+  { car: "19.5톤 (75M)", base: "-", half: "130만원", day: "180만원" },
+];
+
+const steps = [
+  { no: "01", title: "문의", desc: "작업 주소, 작업 내용, 작업 높이(층수), 희망 날짜를 알려 주세요." },
+  { no: "02", title: "현장 확인", desc: "현장 사진으로 진입로·주차 공간·전선 같은 장애물을 확인합니다." },
+  { no: "03", title: "차량·일정 확정", desc: "높이와 현장 조건에 맞는 톤수와 이용 시간을 정해 배차합니다." },
+  { no: "04", title: "작업", desc: "기사님이 장비를 고정하고 안전 확인 후 작업을 진행합니다." },
+];
+
+const safety = [
+  { title: "지반·장애물 확인", desc: "차량을 세울 바닥 상태와 전선·가로수 간섭을 작업 전에 확인합니다." },
+  { title: "아웃트리거 고정", desc: "장비 지지대를 펼쳐 차체를 고정한 뒤 붐을 올립니다." },
+  { title: "기상 확인", desc: "강풍·우천 시에는 안전을 위해 일정을 조정합니다." },
+  { title: "도로 사용 안내", desc: "도로에 차량을 세워야 하는 현장은 필요한 절차를 미리 안내합니다." },
+];
+
+const gallery = [
+  { src: "/IMG_2251.jpeg", alt: "상가 건물 외벽 스카이차 고소작업 현장" },
+  { src: "/IMG_2254.jpeg", alt: "1톤 스카이차 상가 간판 작업" },
+  { src: "/IMG_2253.jpeg", alt: "철골 구조물 스카이차 작업" },
+  { src: "/IMG_2249.jpeg", alt: "공장 천장 설비 고소작업" },
+  { src: "/IMG_2252.jpeg", alt: "공장 내부 설비 스카이차 작업" },
+  { src: "/IMG_2248.jpeg", alt: "건물 외벽 스카이차 붐 작업" },
+];
+
+const provinceNames: Record<string, string> = { seoul: "서울", gyeonggi: "경기", incheon: "인천" };
+
 const areas = [
   {
     number: "01",
@@ -142,6 +178,10 @@ export default function Home() {
               작업안내
             </a>
 
+            <a href="#price">
+              요금안내
+            </a>
+
             <a href="#area">
               작업지역
             </a>
@@ -160,11 +200,11 @@ export default function Home() {
           </div>
 
           <h1>
-            현장에 필요한
+            서울·경기·인천 스카이차,
             <br />
 
             <strong>
-              스카이차를 정확하게.
+              현장에 맞게 정확하게.
             </strong>
           </h1>
 
@@ -190,10 +230,17 @@ export default function Home() {
             </a>
 
             <a
-              href="#area"
+              href={smsHref()}
               className="subButton"
             >
-              작업지역 확인
+              문자로 사진 견적
+            </a>
+
+            <a
+              href="#price"
+              className="subButton"
+            >
+              요금 안내
             </a>
           </div>
 
@@ -309,7 +356,7 @@ export default function Home() {
                 <div className="vehiclePhoto">
                   <img
                     src={vehicle.image}
-                    alt={`${vehicle.name} 스카이차 작업`}
+                    alt={`${vehicle.name} 스카이차 고소작업 현장`}
                   />
 
                   <div className="vehiclePhotoShade" />
@@ -346,6 +393,127 @@ export default function Home() {
               </Link>
             )
           )}
+        </div>
+      </section>
+
+      {/* VEHICLE GUIDE TABLE */}
+
+      <section className="proSection">
+        <div className="proInner">
+          <span className="smallTitle">
+            VEHICLE GUIDE
+          </span>
+
+          <h2 className="proTitle">
+            차량 선택 가이드
+          </h2>
+
+          <p className="proLead">
+            작업 높이와 차량을 세울 공간에 따라 맞는 톤수가 달라집니다.
+            건물 층수와 앞 도로 폭을 알려 주시면 정확히 안내해 드립니다.
+          </p>
+
+          <div className="proTableWrap">
+            <table className="proTable">
+              <thead>
+                <tr>
+                  <th>차량</th>
+                  <th>이런 현장에 맞습니다</th>
+                  <th>주요 작업</th>
+                </tr>
+              </thead>
+              <tbody>
+                {vehicleData.map((v) => (
+                  <tr key={v.slug}>
+                    <td>
+                      <Link href={`/vehicles/${v.slug}`}>
+                        {v.name} 스카이차
+                      </Link>
+                    </td>
+                    <td>{v.headline}</td>
+                    <td>
+                      {v.suitableFor
+                        .map((x) => x.title)
+                        .join(" · ")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICE */}
+
+      <section
+        id="price"
+        className="proSection proDark"
+      >
+        <div className="proInner">
+          <span className="smallTitle light">
+            PRICE
+          </span>
+
+          <h2 className="proTitle">
+            스카이차 요금 안내
+          </h2>
+
+          <p className="proLead">
+            전국 스카이협회 표준 단가표 기준입니다. 오전·오후는 4시간,
+            하루는 8시간 기준이며 현장 조건과 거리에 따라 달라질 수 있어
+            상담 시 정확히 안내해 드립니다.
+          </p>
+
+          <div className="proTableWrap">
+            <table className="proTable">
+              <thead>
+                <tr>
+                  <th>차종</th>
+                  <th>기본 (1시간)</th>
+                  <th>오전 / 오후</th>
+                  <th>하루 (8시간)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {priceRows.map((r) => (
+                  <tr key={r.car}>
+                    <td>{r.car}</td>
+                    <td>{r.base}</td>
+                    <td>{r.half}</td>
+                    <td>{r.day}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+
+      <section className="proSection">
+        <div className="proInner">
+          <span className="smallTitle">
+            PROCESS
+          </span>
+
+          <h2 className="proTitle">
+            배차 진행 절차
+          </h2>
+
+          <div className="proGrid4">
+            {steps.map((st) => (
+              <div
+                className="proCard"
+                key={st.no}
+              >
+                <b>{st.no}</b>
+                <strong>{st.title}</strong>
+                <p>{st.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -465,6 +633,137 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AREA LINKS */}
+
+      <section className="proSection">
+        <div className="proInner">
+          <span className="smallTitle">
+            LOCAL PAGE
+          </span>
+
+          <h2 className="proTitle">
+            지역별 스카이차 안내
+          </h2>
+
+          {(["seoul", "gyeonggi", "incheon"] as const).map((prov) => (
+            <div
+              className="proAreaBlock"
+              key={prov}
+            >
+              <h3>
+                <Link href={`/area/${prov}`}>
+                  {provinceNames[prov]} 스카이차
+                </Link>
+              </h3>
+
+              <div className="proAreaLinks">
+                {regions
+                  .filter((r) => r.province === prov)
+                  .map((r) => (
+                    <Link
+                      key={r.slug}
+                      href={`/area/${r.province}/${r.slug}`}
+                    >
+                      {r.name}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SAFETY */}
+
+      <section className="proSection proDark">
+        <div className="proInner">
+          <span className="smallTitle light">
+            SAFETY
+          </span>
+
+          <h2 className="proTitle">
+            작업 전 안전 확인
+          </h2>
+
+          <div className="proGrid4">
+            {safety.map((sf) => (
+              <div
+                className="proCard"
+                key={sf.title}
+              >
+                <strong>{sf.title}</strong>
+                <p>{sf.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GALLERY */}
+
+      <section className="proSection">
+        <div className="proInner">
+          <span className="smallTitle">
+            FIELD
+          </span>
+
+          <h2 className="proTitle">
+            작업 현장
+          </h2>
+
+          <div className="proGallery">
+            {gallery.map((g) => (
+              <figure key={g.src}>
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                />
+                <figcaption>{g.alt}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+
+      <section className="proSection">
+        <div className="proInner">
+          <span className="smallTitle">
+            FAQ
+          </span>
+
+          <h2 className="proTitle">
+            자주 묻는 질문
+          </h2>
+
+          <div className="proFaq">
+            {FAQ.map((f) => (
+              <details key={f.q}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: FAQ.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            }),
+          }}
+        />
+      </section>
+
       {/* BRAND */}
 
       <section className="brandSection">
@@ -538,6 +837,13 @@ export default function Home() {
           }}
         >
           {DISPLAY_PHONE}
+        </a>
+
+        <a
+          href={smsHref()}
+          className="proSmsLink"
+        >
+          문자로 현장 사진 보내기 →
         </a>
       </section>
 

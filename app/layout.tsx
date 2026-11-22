@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "707스카이 | 서울·경기·인천 스카이차",
 
     template:
-      "%s | 707스카이",
+      "%s",
   },
 
   description:

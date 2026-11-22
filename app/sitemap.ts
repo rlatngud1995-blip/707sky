@@ -13,7 +13,7 @@ const SITE =
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now =
-    new Date();
+    new Date("2026-11-22");
 
   const mainPages: MetadataRoute.Sitemap = [
     {
